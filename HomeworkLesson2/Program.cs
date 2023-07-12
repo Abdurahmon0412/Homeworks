@@ -4,18 +4,28 @@
     {
         public static void Main(string[] args)
         {
-            // HT 1
+            //Task1();
+            //Task2();
+            Task3();
 
-            //string ism, familiya;
-            //int yosh;
-            //Console.WriteLine("Enter your Surname: ");
-            //ism = Console.ReadLine();
-            //Console.WriteLine("Enter your Lastname: ");
-            //familiya = Console.ReadLine();
-            //Console.WriteLine("Enter your Age: ");
-            //yosh = Convert.ToInt32(Console.ReadLine());
-            //Console.WriteLine($"Ism: {ism} \nFamilya: {familiya}\nYosh:{yosh}");
+        }
 
+        public static void Task1()
+        {
+             //HT 1
+
+            string ism, familiya;
+            int yosh;
+            Console.WriteLine("Enter your Surname: ");
+            ism = Console.ReadLine();
+            Console.WriteLine("Enter your Lastname: ");
+            familiya = Console.ReadLine();
+            Console.WriteLine("Enter your Age: ");
+            yosh = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine($"Ism: {ism} \nFamilya: {familiya}\nYosh:{yosh}");
+        }
+        public static void Task2()
+        {
             // HT 2
 
             //for bugungi sana
@@ -38,6 +48,10 @@
             string NicName = "Abdurahmon Developer";
             Console.WriteLine(NicName);
 
+        }
+
+        public static void Task3 ()
+        {
             // HT 3
 
             // Primitive type
@@ -45,8 +59,16 @@
             char simbol = 'A';
             Console.WriteLine(amount + "\n" + simbol);
             // complex type 
-            DateTime tomorrow = DateTime.Today.AddDays(1);
-            Console.WriteLine(tomorrow);
+            var tuday = DateTime.Today;
+            Console.WriteLine(tuday.ToShortDateString());
+
+            short valueType1 = 12;
+            bool valueType2 = false;
+            Console.WriteLine(valueType1 + "\n" + valueType2);
+
+            DateTime referenceType1 = DateTime.Today;
+            Console.WriteLine(referenceType1.Year.ToString());
+
         }
     }
 
