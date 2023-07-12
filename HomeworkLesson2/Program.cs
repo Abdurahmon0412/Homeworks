@@ -55,17 +55,21 @@
             // HT 3
 
             // Primitive type
+            Console.WriteLine("Primitive types");
             int amount = 100;
             char simbol = 'A';
             Console.WriteLine(amount + "\n" + simbol);
             // complex type 
+            Console.WriteLine("Complex types");
             var tuday = DateTime.Today;
             Console.WriteLine(tuday.ToShortDateString());
 
+            Console.WriteLine("value types");
             short valueType1 = 12;
             bool valueType2 = false;
             Console.WriteLine(valueType1 + "\n" + valueType2);
 
+            Console.WriteLine("reference types");
             DateTime referenceType1 = DateTime.Today;
             Console.WriteLine(referenceType1.Year.ToString());
 
