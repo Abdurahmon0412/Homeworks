@@ -11,6 +11,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lesson1", "Lesson1", "{D78C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HomeworkLesson1", "Lesson1\HomeworkLesson1.csproj", "{B6E3934A-2771-4754-B0CA-615C8B828A43}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Lesson3", "Lesson3", "{9933E71F-8889-45B1-B4D2-F1E6D5461D46}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
