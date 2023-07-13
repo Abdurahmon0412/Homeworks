@@ -11,7 +11,10 @@
                 {"#", "#","#"},
                 {"#", "#","#"}
             };
+            
+            
             Print(board);
+            
             Console.WriteLine("Xurmatli Player X bulasizmi yoki 0: ");
             var player = Console.ReadLine().ToUpper();
             string robot;
@@ -23,6 +26,8 @@
             {
                 robot = "X";
             }
+            
+            
             while (true)
             {
                 while (true)
@@ -33,37 +38,48 @@
                     if (board[x, y] == "#")
                     {
                         board[x, y] = robot;
+                        Print(board);
                         break;
                     }
-                    Print(board);
-                    bool winR = Checked(board, robot);
-                    if (winR)
+                    else
                     {
-                        Console.WriteLine("Komputer g'alaba qozondi ");
-                        break;
+                        continue;
                     }
-                    Print(board);
                 }
+                bool winR = Checked(board, robot);
+                if (winR)
+                {
+                    Console.WriteLine("Komputer g'alaba qozondi ");
+                    break;
+                }
+                Print(board);
+
                 while (true)
                 {
                     Console.WriteLine("qatorni kiriting: ");
-                    int px = int.Parse(Console.ReadLine());
+                    int px = int.Parse(Console.ReadLine()) - 1;
                     Console.WriteLine("ustunni kiriting: ");
-                    int py = int.Parse(Console.ReadLine());
-                    Print(board);   
+                    int py = int.Parse(Console.ReadLine()) - 1;
+                    Print(board);
                     if (board[px, py] == "#")
                     {
                         board[px, py] = player;
+                        Print(board);
                         break;
                     }
-                    Print(board);
-                    bool winP = Checked(board, player);
-                    if (winP)
+                    else
                     {
-                        Console.WriteLine("Tabriklaymiz siz yutdingiz.");
-                        break;
+                        Console.WriteLine("Bu yer belgilangan boshqa tanlang ");
                     }
                 }
+                bool winP = Checked(board, player);
+                if (winP)
+                {
+                    Console.WriteLine("Tabriklaymiz siz yutdingiz.");
+                    Print(board);
+                    break;
+                }
+                
 
             }
         }
@@ -79,6 +95,7 @@
                     } 
 
                 }
+                
             }
             return false;
         }
