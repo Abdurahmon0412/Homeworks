@@ -30,6 +30,18 @@
             
             while (true)
             {
+                bool winR = Checked(board, robot);
+                var draw = CheckDraw(board);
+                if(draw == true)
+                {
+                    Console.WriteLine("Durrang"); break;
+                }
+                if (winR)
+                {
+                    Console.WriteLine("Komputer g'alaba qozondi ");
+                    break;
+                }
+                Print(board);
                 while (true)
                 {
                     int x = rd.Next(0, 3);
@@ -46,13 +58,14 @@
                         continue;
                     }
                 }
-                bool winR = Checked(board, robot);
-                if (winR)
+
+                bool winP = Checked(board, player);
+                if (winP)
                 {
-                    Console.WriteLine("Komputer g'alaba qozondi ");
+                    Print(board);
+                    Console.WriteLine("Tabriklaymiz siz yutdingiz.");
                     break;
                 }
-                Print(board);
 
                 while (true)
                 {
@@ -63,8 +76,8 @@
                     Print(board);
                     if (board[px, py] == "#")
                     {
-                        board[px, py] = player;
                         Print(board);
+                        board[px, py] = player;
                         break;
                     }
                     else
@@ -72,13 +85,7 @@
                         Console.WriteLine("Bu yer belgilangan boshqa tanlang ");
                     }
                 }
-                bool winP = Checked(board, player);
-                if (winP)
-                {
-                    Console.WriteLine("Tabriklaymiz siz yutdingiz.");
-                    Print(board);
-                    break;
-                }
+                
                 
 
             }
@@ -92,8 +99,11 @@
                     if (board[i,0] == simbol && board[i,1] == simbol && board[i,2] == simbol || board[0,i] == simbol && board[1,0] == simbol && board[2,0] == simbol)
                     {
                         return true;
-                    } 
-
+                    }
+                    if (board[0,0] == simbol && board[1,1] == simbol && board[2,2] == simbol || board[0,2]  == simbol && board[1,1] == simbol && board[2,0] == simbol)
+                    {
+                        return true;
+                    }
                 }
                 
             }
@@ -113,6 +123,23 @@
                 Console.WriteLine();
 
             }
+        }
+        public static bool CheckDraw(string[,] board)
+        {
+            int count = 0;
+            for (int i = 0; i < 3; i++) 
+            {
+                for(int k = 0; k < 3; k++)
+                {
+                    if (board[i,k] == "#")
+                    {
+                        count++;
+                    }
+                }
+            }
+            if (count < 3)
+                return true;
+            return false;
         }
     }
 }
