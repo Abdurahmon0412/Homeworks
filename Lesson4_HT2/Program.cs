@@ -21,7 +21,6 @@ foreach (var i in NamesBase)
             Console.WriteLine("Bunday User avvaldan mavjud Sizning Usernamiz shunday tahrirlandi");
             Name += Convert.ToString(Convert.ToChar(rd.Next(48, 55)));
             Name += Predefinded[rd.Next(0, Predefinded.Length)];
-            Name += "@gmail.com";
             check = false;
         }
         
@@ -29,6 +28,5 @@ foreach (var i in NamesBase)
 if (check)
 {
     Name += Predefinded[rd.Next(0, Predefinded.Length)];
-    Name += "@gmail.com";
 }
 Console.WriteLine(Name);

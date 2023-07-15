@@ -7,9 +7,9 @@ Console.WriteLine("Passwordda simvollar qatnashsinmi: ha 1 yuq 0 ");
 int simvol = Convert.ToInt32(Console.ReadLine());
 Console.WriteLine("Password uzunligini kiriting ");
 int len = Convert.ToInt32(Console.ReadLine());
-var password = "";
+string password = "";
 int i = 0;
-while ( i < len / 2)
+while ( i < len)
 {
 
 
@@ -18,25 +18,18 @@ while ( i < len / 2)
         password = password + Convert.ToString(Convert.ToChar(rd.Next(48,57)));
         i++;
     }
-    else
-    {
-        break;
-    }
-}
-var j = password.Length;
-while ( j < len)
-{
+    
+
     if(harf == 1)
     {
         password = password + Convert.ToString(Convert.ToChar(rd.Next(97,121)));
-        j++;
+        i++;
     }
     if (simvol == 1)
     {
-        j ++;
+        i ++;
         password = password + Convert.ToString(Convert.ToChar(rd.Next(33, 47)));
 
     }
-    
+
 }
-Console.WriteLine(password);
