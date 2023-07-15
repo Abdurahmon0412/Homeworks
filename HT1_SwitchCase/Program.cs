@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+﻿#region
 Random rd = new Random();
 string[] tests = 
 {
@@ -11,12 +11,12 @@ string[] tests =
 
 string[] trueAnswer =
 {
-    "int","Yes","True and False","No","12,'c'"
+    "int","Yes","True and False","Yes","12,'c'"
 };
 
 string[] falseAnswer =
 {
-    "Double", "No","Hello and \"1\"","Yes","object, class"
+    "Double", "No","Hello and \"1\"","No","object, class"
 };
 int Score = 0;
 int trueansver = 0;
@@ -84,3 +84,4 @@ else
 {
     Console.WriteLine("Invalid Answers not found");
 }
+#endregion
