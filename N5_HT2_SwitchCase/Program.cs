@@ -6,34 +6,44 @@
         {
             while(true)
             {
-                int Number1 = GetNumber();
-                string charakter = GetOperator();
-                int Number2 = GetNumber();
-
-                switch (charakter)
+                Console.WriteLine("For Exit: 'e'\\ for continue 'c'");
+                string exit = Console.ReadLine();
+                if (exit == "e")
                 {
-                    case "/":
-                        Console.Write("Result: ");
-                        Console.WriteLine(Number1 / Number2);
-                        break;
-                    case "*":
-                        Console.Write("Result: ");
-                        Console.WriteLine(Number1 * Number2);
-                        break;
-                    case "+":
-                        Console.Write("Result: ");
-                        Console.WriteLine(Number1 + Number2);
-                        break;
-                    case "-":
-                        Console.Write("Result: ");
-                        Console.WriteLine(Number1 - Number2);
-                        break;
-                    case "%":
-                        Console.WriteLine(Number1 % Number2);
-                        break;
+                    Console.WriteLine("Thank you");
+                    break;
                 }
+                else
+                {
 
-                
+
+                    int Number1 = GetNumber();
+                    string charakter = GetOperator();
+                    int Number2 = GetNumber();
+
+                    switch (charakter)
+                    {
+                        case "/":
+                            Console.Write("Result: ");
+                            Console.WriteLine(Number1 / Number2);
+                            break;
+                        case "*":
+                            Console.Write("Result: ");
+                            Console.WriteLine(Number1 * Number2);
+                            break;
+                        case "+":
+                            Console.Write("Result: ");
+                            Console.WriteLine(Number1 + Number2);
+                            break;
+                        case "-":
+                            Console.Write("Result: ");
+                            Console.WriteLine(Number1 - Number2);
+                            break;
+                        case "%":
+                            Console.WriteLine(Number1 % Number2);
+                            break;
+                    }
+                }
             }
         }
         public static int GetNumber()
@@ -52,7 +62,7 @@
         {
             do
             {
-                Console.WriteLine("Enter operator: ");
+                Console.WriteLine("Enter Command: ");
                 string operators = Console.ReadLine();
                 switch (operators)
                 {
@@ -69,6 +79,8 @@
                         return operators;
                         break;
                     case "%":
+                        return operators;
+                    case "e":
                         return operators;
                 }
             } while (true);
