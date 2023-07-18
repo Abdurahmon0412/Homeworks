@@ -1,4 +1,5 @@
-﻿namespace Homeworks
+﻿#region
+namespace Homeworks
 {
     public class Program
     {
@@ -25,6 +26,11 @@
                     {
                         case "/":
                             Console.Write("Result: ");
+                            if (Number2 == 0)
+                            {
+                                Console.WriteLine("Zero division Error");
+                                break;
+                            }
                             Console.WriteLine(Number1 / Number2);
                             break;
                         case "*":
@@ -87,3 +93,4 @@
         }
     }
 }
+#endregion
