@@ -1,4 +1,5 @@
-﻿using System.Reflection.Metadata;
+﻿#region
+using System.Reflection.Metadata;
 
 string[] Students = new string[]
 {
@@ -93,3 +94,4 @@ for (int print = 0;print < Score.Length; print++)
     else if (Score[print] < 70)
         Console.WriteLine($"{Students[print]} - Fail ({Score[print]})Ball");
 }
+#endregion
