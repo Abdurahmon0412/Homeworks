@@ -45,7 +45,7 @@ while (true)
     o'tib ketgan eventlarni ko'rsatish ( yaqinligi bo'yicha ) - 7
     dasturni yopish - 8");
 
-    var choose = (Console.ReadLine());
+    var choose = Console.ReadLine();
     if (String.IsNullOrEmpty(Convert.ToString(choose)))
     {
         Console.WriteLine("Amalni Tanlang");
@@ -55,7 +55,7 @@ while (true)
     {
         case "1":
             Console.Clear();
-            Console.WriteLine("Saralash turini tanlang:\n 1.Event nomi buyicha\n2.Event vaqti buyicha");
+            Console.WriteLine("Saralash turini tanlang:\n 1.Event nomi buyicha\n 2.Event vaqti buyicha");
             var choose1_2 = Console.ReadKey().KeyChar;
             switch (choose1_2)
             {
