@@ -7,11 +7,11 @@
             TimeSpan Alternative = TimeSpan.FromHours(8);
             DateOnly[] FiveDays = new DateOnly[]
             {
-                new DateOnly(2023,07,10),
-                new DateOnly(2023,07,20),
-                new DateOnly(2023,07,21),
-                new DateOnly(2023,07,22),
-                 new DateOnly(2023,07,23)
+                new DateOnly(2022,07,10),
+                new DateOnly(2022,07,20),
+                new DateOnly(2022,07,21),
+                new DateOnly(2022,07,22),
+                 new DateOnly(2022,07,23)
             };
 
             TimeSpan[] Duration = new TimeSpan[]
@@ -48,7 +48,7 @@
             {
                 for(int j = i;j < FiveDays.Length; j++)
                 {
-                    if(DateTime.Now.DayOfYear - FiveDays[i].DayOfYear < DateTime.Now.DayOfYear - FiveDays[j].DayOfYear)
+                    if(DateTime.Now.DayOfYear - FiveDays[i].DayOfYear > DateTime.Now.DayOfYear - FiveDays[j].DayOfYear)
                     {
                         var TempFivedays = FiveDays[i];
                         FiveDays[i] = FiveDays[j];
@@ -72,10 +72,9 @@
 
 
 
-
             for (int Practice = 0; Practice < 5; Practice++)
             {
-                var score = (Duration[Practice].Hours - AwakeningIndex[Practice]) / (Alternative.Hours + Insufficient[Practice] ) * 10;
+                var score = (Duration[Practice].Hours - (AwakeningIndex[Practice] / Duration[Practice].Hours)) / (Alternative.Hours + Insufficient[Practice] ) * 10;
                 Console.WriteLine($"{FiveDays[Practice]} - " +
                     $"{Duration[Practice].Hours} hours  -  " +
                     $"{score.ToString("F2")}  score");
