@@ -2,6 +2,7 @@
 
 //    1 uquv markazdagi umumiy uquvchilar ruyhatini saqlashda yani 	 	
 //	qushish va uchirib yuborish ancha osonn
+// emailga narsa junatishlarni alohida listga saqlab olsak uni yana topib tahrirlashimiz oson
 //2stack
 //	1 liftga oxirgi kirgan birinchi chiqib ketadi
 //	2 internettan malumotralni izlaganimizda oxirgi malumot birinchi 

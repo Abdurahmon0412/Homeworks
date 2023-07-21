@@ -9,8 +9,11 @@ Emails.Add("test.com");
 Emails.Add("sherali23@.com");
 
 
-var emailAddressRegex = new Regex("^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\\.[a-zA-Z0-9]+$");
+//Console.WriteLine(Regex.IsMatch(emailAddress, emailAddressPattern));
+//Console.WriteLine(emailAddressRegex.IsMatch(emailAddress));
 //var emailAddressPattern = @"^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+$";
+
+var emailAddressRegex = new Regex("^[a-zA-Z0-9.]+@[a-zA-Z0-9]+\\.[a-zA-Z0-9]+$");
 foreach (string email in Emails)
 {
     if (emailAddressRegex.IsMatch(email))
@@ -24,5 +27,3 @@ foreach (string email in Emails)
 }
 
 
-//Console.WriteLine(Regex.IsMatch(emailAddress, emailAddressPattern));
-//Console.WriteLine(emailAddressRegex.IsMatch(emailAddress));
