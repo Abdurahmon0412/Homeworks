@@ -81,6 +81,7 @@ namespace Homeworks
             if(yosh < 18)
             {
                 Console.WriteLine(Messages["Underage"].Replace(NameToken,nameIS));
+                return;
             }
             else if(yosh > 18)
             {
@@ -89,6 +90,7 @@ namespace Homeworks
             else if(yosh > 90)
             {
                 Console.WriteLine(Messages["GoldenAger"].Replace(NameToken, nameIS));
+                return;
             }
             var IsEpm = new DateTime();
             if(Names.Count == 5)
