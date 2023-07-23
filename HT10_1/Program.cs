@@ -18,6 +18,8 @@ namespace Homeworks
             {
                 Libraries.AddBook(book, rd.Next(0,3));
             }
+           
+            
             Console.WriteLine("Olib turish uchun kitoblardan birini tanlang: 1....");
             Libraries.GetBooks();
             Console.WriteLine("Dasturdan chiqish uchun 0 ni bosing");
@@ -41,7 +43,8 @@ namespace Homeworks
                         Console.WriteLine(Libraries.Checout(books[2]));
                         break;
                     default:
-                        Console.WriteLine("Kechirasiz bunday kitob mavjud emas iltimos tugri raqamni tanlang");
+                        Console.WriteLine("Suz xizmatdan foydalanishdan mahrum qilindingiz! ");
+                        checkwhile = false;
                         break;
                 }
 
