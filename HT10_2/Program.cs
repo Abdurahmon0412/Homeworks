@@ -22,7 +22,7 @@ namespace Homeworks
             }
 
             var exit = true;
-            var i = 0;
+            var i = 1;
             while (exit)
             {
                 Console.WriteLine("Chiqish uchun exit ni tering! yoki Sotib oladigan mahsulotingizni tanlang 1.....");
@@ -55,6 +55,5 @@ namespace Homeworks
         }
     }
 }    
-    
     
     
