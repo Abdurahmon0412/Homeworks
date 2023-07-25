@@ -16,7 +16,8 @@ namespace Homeworks
                 Console.WriteLine("(mark done) - m\n(add) - a");
 
                 var check = Console.ReadLine().ToLower();
-                if(String.IsNullOrEmpty(check) || string.IsNullOrWhiteSpace(check)) Console.WriteLine("iltimos komanda kiriting");
+                if(string.IsNullOrEmpty(check) || string.IsNullOrWhiteSpace(check))
+                    Console.WriteLine("iltimos komandani tugri kiriting");
                 switch (check)
                 {
                     case "d":
@@ -38,10 +39,6 @@ namespace Homeworks
                         break;
                 }
             }
-
-            
-            
-            TaskList.MarkDone();
         }
 
         public static void DefaultTask(ref ToDoList TaskList)

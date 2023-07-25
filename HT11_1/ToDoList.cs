@@ -31,6 +31,7 @@ namespace HT11_1
             {
                 todolist[j - 1].Isdone = true;
                 Console.WriteLine("Task:  " + todolist[j - 1].TaskName + "  marked as done");
+                todolist.RemoveAt(j-1);
             }
             
         }
