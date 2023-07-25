@@ -37,11 +37,11 @@ namespace Homeworks
                     {
                         case "n":
                             Musics.Next();
-                            Console.WriteLine($"Playing{Musics.Nowtrack.Author} - {Musics.Nowtrack.Name}");
+                            Console.WriteLine($"Playing {Musics.Nowtrack.Author} - {Musics.Nowtrack.Name}");
                             break;
                         case "p":
                             Musics.Previous();
-                            Console.WriteLine($"Playing{Musics.Nowtrack.Author} - {Musics.Nowtrack.Name}");
+                            Console.WriteLine($"Playing {Musics.Nowtrack.Author} - {Musics.Nowtrack.Name}");
                             break;
                         case "pause":
                             Musics.Pause();

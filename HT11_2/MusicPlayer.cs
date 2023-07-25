@@ -8,8 +8,8 @@ namespace HT11_2
 {
     public class MusicPlayer
     {
-        public List<Track> MusicList = new List<Track>(); 
-        public Track Nowtrack { get; set; }
+        public List<Track> MusicList = new List<Track>();
+        public Track Nowtrack;
         public bool PauseTrack = true;
         public void Next ()
         {
@@ -21,14 +21,14 @@ namespace HT11_2
             }
             else
             {
-                for (int i = 1; i < MusicList.Count ; i++)
+                for (int i = 0; i < MusicList.Count ; i++)
                 {
-                    if (MusicList[i - 1] == Nowtrack)
+                    if (MusicList[i] == Nowtrack)
                     {
-                        Nowtrack = MusicList[i];
+                        Nowtrack = MusicList[i+1];
                         PauseTrack = true;
+                        break;
                     }
-                    break;
                 }
             }
         }
@@ -41,14 +41,14 @@ namespace HT11_2
                 PauseTrack = true;
                 return;
             }
-            for (int i = 1; i < MusicList.Count; i++)
+            for (int i = 0; i < MusicList.Count; i++)
             {
-                if (MusicList[i - 1] == Nowtrack)
+                if (MusicList[i] == Nowtrack)
                 {
-                    Nowtrack = MusicList[i ];
+                    Nowtrack = MusicList[i - 1];
                     PauseTrack = true;
+                    break;
                 }
-                break;
             }
 
         }
