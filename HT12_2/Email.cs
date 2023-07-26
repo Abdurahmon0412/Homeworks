@@ -55,7 +55,7 @@ namespace HT12_2
 
             }
         }
-
+        int subject = 1;
         public string Subject
         {
             get => _subject; 
