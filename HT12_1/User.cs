@@ -8,16 +8,16 @@ namespace HT12_1
 {
     public class User
     {
-        string Name { get; set; }
-        string Firstname { get; set; }
-        string Lastname { get; set; }
+        public string Name { get; set; }
+        public string Firstname { get; set; }
+        public string Lastname { get; set; }
 
         public string FullName => $"{Name} {Firstname} {Lastname}";
         
     
         public override int GetHashCode()
         {
-            return Name.GetHashCode() + Firstname.GetHashCode() + Lastname.GetHashCode();
+            return FullName.GetHashCode();
         }
 
         public override bool Equals(object? obj)
