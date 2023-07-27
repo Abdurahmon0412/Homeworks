@@ -7,7 +7,7 @@ var password4 = new UniquePasswordGenerate(10,true,true);
 Console.WriteLine("Password is:" + password3.Generate(true));
 Console.WriteLine("Password is: "  + password1.Generate());
 Console.WriteLine("Password is: " + password4.GenerateUniquePassword());
-Console.WriteLine("Password is: " + password2.Generate());
+//Console.WriteLine("Password is: " + password2.Generate());
 
 
 

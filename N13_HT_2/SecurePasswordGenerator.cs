@@ -22,24 +22,23 @@ namespace N13_HT_2
             string simbols = "!@#$%^&*()_+=*~/\\][}{|:'\";.<>,?";
             for (var passlength = 0; passlength < _Length; passlength++)
             {
-                if (_HasDigit && passlength < _Length)
+                if (_HasDigit && password.Length < _Length)
                 {
                     password += numbers[rd.Next(0, numbers.Length)];
                 }
-                if (_HasLetters && passlength < _Length)
+                if (_HasLetters && password.Length < _Length)
                 {
                     password += letters[rd.Next(0, letters.Length)];
                 }
-                if(hassimbol && passlength < _Length)
+                if(hassimbol && password.Length < _Length)
                 {
                     password += simbols[rd.Next(0, simbols.Length)];
                 }
             }
-            if (password.Length > 0)
-            {
+            if (password.Length < 1 || _HasDigit == false && hassimbol == false && _HasLetters == false)
+                throw new Exception("password no created");
+            else 
                 return password;
-            }
-            else { throw new Exception("password no created"); }
 
 
         }
