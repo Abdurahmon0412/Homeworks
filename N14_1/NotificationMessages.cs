@@ -23,20 +23,21 @@ namespace N14_1
 
         }
 
-        protected string FindMessage(string messagename)
+        protected KeyValuePair<string, string>? FindMessage(string messagename)
         {
             foreach (var member in MessegeMember)
             {
                 if(member.Key.Contains(messagename))
                 {
-                    return $"{member.Key} - {member.Value}";
+                    return member;
                 }
             }
-            return "This message not found";
+            return null;
         }
         public string SearchMessage(string messagename)
         {
-            return FindMessage(messagename);
+            var message =  FindMessage(messagename);
+            return message == null ? "Message not found" : message.Value.Value;
         }
     }
 
