@@ -32,8 +32,8 @@ foreach(var b in GetWet1)
 }
 
 Console.WriteLine();
-var Getwet2  = Day1.GetWeather(6);
-foreach (var b in Getwet2)
+var Getwether2  = Day1.GetWeather(6);
+foreach (var b in Getwether2)
 {
     Console.WriteLine(b);
 }

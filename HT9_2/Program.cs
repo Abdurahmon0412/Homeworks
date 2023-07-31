@@ -31,6 +31,9 @@
                 {
                     if (Datetimes[timeA] > Datetimes[timeB])
                     {
+                        var temp = EventName[timeA];
+                        EventName[timeA] = EventName[timeB];
+                        EventName[timeB] = temp;
                         var Temp = Datetimes[timeA];
                         Datetimes[timeA ] = Datetimes[timeB];
                         Datetimes[timeB ] = Temp;
