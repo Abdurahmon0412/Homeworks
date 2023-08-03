@@ -6,7 +6,16 @@ using System.Threading.Tasks;
 
 namespace N17_HT1
 {
-    internal class Class1
+    internal sealed class Audi : CarRental
     {
+        public string ModelName { get; set; }
+        public const int RentPricePerHour = 20;
+
+
+        public Audi(string modelname)
+        {
+            this.ModelName = modelname;
+            this.BrandName = "AUDI";
+        }
     }
 }

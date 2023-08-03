@@ -6,64 +6,63 @@ using System.Threading.Tasks;
 
 namespace N17_HT1
 {
-    public class CarRentalManagement
+    internal class CarRentalManagement
     {
-        private List<CarRental> Cars { get;set; }
-        
-        public CarRentalManagement() 
-        {
-
-            Cars = new List<CarRental>();
-        }
+        public List<CarRental> Cars = new List<CarRental>();
 
         public void Add(CarRental car)
         {
             Cars.Add(car);
         }
 
-        public CarRental? Rent(string brendname)
+        public CarRental Rent(string BrandName)
         {
-            foreach (var car in Cars)
+            foreach (CarRental car in Cars)
             {
-                if (car.BrandName.Contains(brendname) && car.IsRented == false){
+                if (car.BrandName == BrandName && car.isRented == false)
+                {
                     car.RentStartTime = DateTime.Now;
-                    car.IsRented = true;
+                    car.isRented = true;
                     return car;
                 }
             }
+            Console.WriteLine("Uzr, hozirda ijaraga moshina yo'q");
             return null;
         }
 
-        public CarRental? Return(CarRental car)
+        public void Return(CarRental car)
         {
-            foreach(var Car in Cars)
+            foreach (var carB in Cars)
             {
-                if(Car.Id == car.Id)
+                if (carB.Id == car.Id)
                 {
-                    Car.IsRented = false;
-                    if(car.BrandName == "BMW")
+                    car.isRented = false;
+                    var seconds = (DateTime.Now - car.RentStartTime).TotalSeconds;
+                    if (car is Bmw)
                     {
-
-                        Car.Balance = (DateTime.Now - car.RentStartTime).TotalSeconds * BMW.RentPriceHour;
+                        car.Balance += seconds * Bmw.RentPricePerHour;
                     }
-                    else if(car.BrandName == "AUDI")
+                    if (car is Audi)
                     {
-                        Car.Balance = (DateTime.Now - car.RentStartTime).TotalSeconds * AUDI.RentPriceHour;
-
+                        car.Balance += seconds * Audi.RentPricePerHour;
                     }
                 }
             }
-            return null;
-        }
-        public void CalculateBalance()
-        {
-            double calculatebalance = 0;
-            foreach (CarRental car in Cars)
-            {
-                calculatebalance += car.Balance;
-            }
-            Console.WriteLine(calculatebalance);
         }
 
+        public void CalculateBalance()
+        {
+            var sum = default(double);
+            foreach (var car in Cars)
+            {
+                sum += car.Balance;
+            }
+            Console.WriteLine($"Umumiy balance: {sum}");
+        }
+
+        public CarRentalManagement()
+        {
+            Cars = new List<CarRental>();
+        }
     }
 }

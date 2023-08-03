@@ -1,20 +1,37 @@
 ﻿using N17_HT1;
-var Menegment = new CarRentalManagement();
-CarRental bmw1 = new BMW("X1");
-CarRental bmw2 = new BMW("X2");
-CarRental bmw3 = new BMW("X3");
-CarRental audi1 = new BMW("Y1");
-CarRental audi2 = new BMW("Y1");
-CarRental audi3 = new BMW("Y3");
-Menegment.Add(bmw1);
-Menegment.Add(bmw2);
-Menegment.Add(bmw3);
-Menegment.Add(audi1);
-Menegment.Add(audi2);
-Menegment.Add(audi3);
+
+var management = new CarRentalManagement();
+CarRental bmw1 = new Bmw("BMW-HT1");
+CarRental bmw2 = new Bmw("BMW-HT2");
+CarRental bmw3 = new Bmw("BMW-HT3");
+
+CarRental audi1 = new Audi("Audi-HT1");
+CarRental audi2 = new Audi("Audi-HT2");
+CarRental audi3 = new Audi("Audi-HT3");
+
+management.Add(bmw1);
+management.Add(bmw2);
+management.Add(bmw3);
+management.Add(audi1);
+management.Add(audi2);
+management.Add(audi3);
 
 
-Console.WriteLine( Menegment.Rent("BMW"));
+
+var rent1 = management.Rent("BMW");
+await Task.Delay(1000 * 5);
+management.Return(rent1);
+
+var rent2 = management.Rent("BMW");
+await Task.Delay(1000 * 6);
+management.Return(rent2);
+
+var rent3 = management.Rent("AUDI");
+await Task.Delay(1000 * 4);
+management.Return(rent3);
+
+var rent4 = management.Rent("BMW");
 await Task.Delay(1000 * 3);
-Console.WriteLine(Menegment.Return(bmw1));
-Menegment.CalculateBalance();
+management.Return(rent4);
+
+management.CalculateBalance();

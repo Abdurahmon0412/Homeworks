@@ -8,5 +8,23 @@ namespace N17_HT2
 {
     internal class ChatMessage
     {
+        public Guid Id;
+        public DateTime SentTime;
+        public DateTime EditedTime;
+        public string Content;
+
+        public ChatMessage(string content)
+        {
+            Id = Guid.NewGuid();
+            SentTime = DateTime.Now;
+            Content = content;
+        }
+
+        public ChatMessage(ChatMessage chatMessage)
+        {
+            this.Id = chatMessage.Id;
+            this.SentTime = chatMessage.SentTime;
+            this.EditedTime = DateTime.Now;
+        }
     }
 }
