@@ -12,10 +12,9 @@ namespace N17_HT1
         public const int RentPricePerHour = 20;
 
 
-        public Audi(string modelname)
+        public Audi(string modelname):base("AUDI")
         {
             this.ModelName = modelname;
-            this.BrandName = "AUDI";
         }
     }
 }

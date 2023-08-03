@@ -11,10 +11,10 @@ namespace N17_HT1
         public string ModelName { get; set; }
         public const int RentPricePerHour = 30;
 
-        public Bmw(string modelname)
+        public Bmw(string modelname):
+            base("BMW")
         {
             this.ModelName = modelname;
-            this.BrandName = "BMW";
         }
 
     }

@@ -16,8 +16,9 @@ namespace N17_HT1
 
 
 
-        public CarRental()
+        public CarRental(string brandname)
         {
+            BrandName = brandname;
             Id = Guid.NewGuid();
         }
     }
