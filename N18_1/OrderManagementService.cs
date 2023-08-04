@@ -8,7 +8,7 @@ namespace N18_1
 {
     public class OrderManagementService
     {
-        public List<int> Orders { get; set; }
+        private List<int> Orders = new List<int>();
 
         OrderCacheService Cache = OrderCacheService.GetInstance();
 
@@ -79,16 +79,16 @@ namespace N18_1
 
         public void Add(int amount)
         {
-            if (amount > 0)
-            {
+            //if (amount > 0)
+            //{
                 Orders.Add(amount);
 
-            }
-            else
-            {
-                throw new Exception("Amount mavjud emas");
-                // 0 dan validatsa
-            }
+            //}
+            //else
+            //{
+            //    throw new Exception("Amount mavjud emas");
+            //    // 0 dan validatsa
+            //}
         }
     }
 }

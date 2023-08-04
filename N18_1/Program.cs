@@ -1,5 +1,6 @@
 ﻿
 using N18_1;
+using System;
 
 var management = new OrderManagementService();
 management.Add(50);
@@ -14,9 +15,8 @@ Console.WriteLine($"Min{management.Min()}");
 Console.WriteLine($"Max{management.Max()}");
 Console.WriteLine($"Max{management.Max()}");
 
-
 management.Add(750);
-management.Add(85);
+management.Add(12);
 management.Add(85);
 management.Add(330);
 
