@@ -25,6 +25,6 @@ var age = Console.ReadLine();
 if (Validator.IsValidAge(age))
     Console.WriteLine($"valid age");
 else
-    Console.WriteLine("Invalid invalid is not fixed");
+    Console.WriteLine("Invalid age is not fixed");
 
 
