@@ -15,7 +15,7 @@ namespace N21_Interface1.Cards
 
         public MilliyHumo(string cardnumber, string bankname,double balance = 0) 
         {
-            if (cardnumber.Length < 16 || string.IsNullOrWhiteSpace(cardnumber))
+            if (string.IsNullOrWhiteSpace(cardnumber))
                 throw new ArgumentException("Invalid card number");
             if (string.IsNullOrWhiteSpace(bankname))
                 throw new ArgumentException("Invalid Bank name");
