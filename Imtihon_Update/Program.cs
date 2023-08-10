@@ -1,6 +1,6 @@
 ﻿using Imtihon_Update;
 using Imtihon_Update.Interfaces;
-var Registrationservice = new RegistrationService();
+RegistrationService? Registrationservice = new RegistrationService();
 bool exit = true;
 while (exit)
 {
@@ -36,7 +36,6 @@ while (exit)
             Console.WriteLine("Bunday komanda yuq dasturdan xato foydalandingiz");
             break;
     }
-
 }
 
 
