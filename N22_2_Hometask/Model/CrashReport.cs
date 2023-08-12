@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace N22_2_Hometask.Model
 {
-    internal class CrashReport:IRewiev
+    public class CrashReport:IRewiev
     {
         public Guid Id { get; set; }
         public int Star { get; set; }

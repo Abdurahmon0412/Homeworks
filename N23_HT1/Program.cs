@@ -17,5 +17,5 @@ var products = new List<Product>
 };
 
 products.OrderByDescending(product => product.Stars)
-.ThenByDescending(produc => produc.Inventore).Take(5)
-.ToList().ForEach(product => Console.WriteLine($"{product.Name} - {product.Inventore} in stock"));
+.ThenByDescending(produc => produc.Inventore).Take(5).ToList()
+.ForEach(product => Console.WriteLine($"{product.Name} - {product.Inventore} in stock"));
