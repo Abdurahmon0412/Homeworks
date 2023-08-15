@@ -22,6 +22,6 @@ Users.Where(user => user.FirstName.Contains(keyvord, StringComparison.OrdinalIgn
 || user.LastName.Contains(keyvord, StringComparison.OrdinalIgnoreCase) 
 || user.EmailAddress.Contains(keyvord, StringComparison.OrdinalIgnoreCase)).ToList()
 .ForEach(user => 
-Console.WriteLine($"{user.FirstName.PadRight(15)} {user.LastName.PadRight(15)} - {user.EmailAddress}"));
+Console.WriteLine($"{user.FirstName.PadRight(15)} {user.LastName.PadRight(15)}  {user.EmailAddress}"));
 
 
