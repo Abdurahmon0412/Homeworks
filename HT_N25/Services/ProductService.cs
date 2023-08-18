@@ -31,7 +31,8 @@ public class ProductService
 
     public List<IProduct> Get(ProductFilterDataModel filter)
     {
-        var filterProducts = _inventories.Where(item => filter.ProductTypes.Contains(item.GetType().FullName)).ToList();
+        var filterProducts = _inventories.Where(item => 
+        filter.ProductTypes.Contains(item.GetType().FullName)).ToList();
         var result = new List<IProduct>(filterProducts);
         return result;
     }
