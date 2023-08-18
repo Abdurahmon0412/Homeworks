@@ -10,13 +10,13 @@ namespace N26_HT2
     public class Skills
     {
         //- Skill modelidan foydalaning(id, name, level )
-        public int Id { get; set; }
+        public Guid Id { get; set; }
         public string Name { get; set; }
         public SkillLevels Level { get; set; }
 
-        public Skills(int id,string name, SkillLevels lavel)
+        public Skills(string name, SkillLevels lavel)
         {
-            Id = id;
+            Id = Guid.NewGuid();
             Name = name;
             Level = lavel;
         }
