@@ -67,18 +67,25 @@ namespace N27_HT2.Services
 
         public void GroupedByTopic()
         {
-            var groupedByTopic = _videoPostList.GroupBy(post => post.Topic);
-            Console.WriteLine("\nVideolarni topic bo'yicha guruhlab:");
-            foreach (var group in groupedByTopic)
+            var groupedByTopic = _videoPostList.GroupBy(post => post.Topic);           
+            //Console.WriteLine("\nVideolarni topic bo'yicha guruhlab:");
+            //foreach (var group in groupedByTopic)
+            //{
+            //    Console.WriteLine($"Topic: {group.Key}");
+            //    foreach (var video in group)
+            //    {
+            //        Console.WriteLine($"  {video.Title}");
+            //    }
+            //}
+
+            groupedByTopic.ToList().ForEach(group =>
             {
                 Console.WriteLine($"Topic: {group.Key}");
-                foreach (var video in group)
+                group.ToList().ForEach(video =>
                 {
                     Console.WriteLine($"  {video.Title}");
-                }
-            }
+                });
+            });
         }
-
-
     }
 }
