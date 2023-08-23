@@ -1,7 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using N29_HT2;
-
-Console.WriteLine("Hello, World!");
+Console.WriteLine("Dastur uz ishini boshladi!");
 //Employee - xodim
 //Hire - ishga oilsh, xodim sifatida ro'yxatdan o'tkazish
 
@@ -24,3 +23,4 @@ var employee1 = new Employee("Firdavs", "Asadov", "toshmurodovj13@gmail.com");
 var employeeService = new EmployeeService();
 var result = employeeService.HireAsync(employee1);
 await Task.WhenAll(result);
+Console.WriteLine("Hello, World!");
