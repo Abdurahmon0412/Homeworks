@@ -54,36 +54,54 @@ namespace N29_HT2
         private string fileNameToken = "{{firstname}}_{lastname}}'s employment contract.docs";
         public async Task HireAsync(Employee employee)
         {
+            #region
+            Console.WriteLine($"HireAsync thread - {Thread.CurrentThread.ManagedThreadId}");
+
             var fullname = employee.FirstName + employee.LastName;
             var taskcofirmation = SendConfirmationEmail(employee.EmailAddress, _confirmSubject, _cofirmbody, fullname);
+
 
             var taskCreatefile = CreateEmployeeFile(employee.FirstName, employee.LastName);
 
             await Task.WhenAll(taskcofirmation);
+
             var taskWilcomeEmail = SendWelcomeEmail(employee.EmailAddress, _welcomeEmailsubject,_welcomeEmailbody, fullname);
+
+
             await Task.WhenAll(taskCreatefile);
-            var taskWriteFileContract = WriteFileContract(_contractText, employee.FirstName, employee.LastName);
+
+            var taskWriteFileContract = Task.Run(() => WriteFileContract(_contractText, employee.FirstName, employee.LastName)); 
+
             await Task.WhenAll(taskWilcomeEmail);
+
             var taskfinally = SendOfficePoliceEmail(employee.EmailAddress, _officeposiciesEmailSubject, _officeposiciesEmailbody, fullname);
+
             await Task.WhenAll(taskfinally);
+            #endregion
         }
 
         private async Task<bool> SendConfirmationEmail(string recevieremail, string subject, string body,string fullname)
         {
-
             var result = await emailService.SendAsync(recevieremail, subject, body.Replace("{{Employee}}", fullname));
+            //Console.WriteLine(Thread.CurrentThread.ManagedThreadId);
             return result;
         }
 
-        private async Task<FileStream> CreateEmployeeFile(string firstname,string lastname)
+        private  Task<FileStream> CreateEmployeeFile(string firstname,string lastname)
         {
             var fileStream = File.Create($"{firstname}_{lastname}'s employment contract.docs");
-            return fileStream;
+            //Console.WriteLine(Thread.CurrentThread.ManagedThreadId);
+            return Task.FromResult(fileStream);
         }
 
         private async Task<bool> SendWelcomeEmail(string recevemail, string subject, string body,string fullname)
         {
+            Console.WriteLine($"SendWelcomeEmail thread before await - {Thread.CurrentThread.ManagedThreadId}");
             var result = await emailService.SendAsync(recevemail, subject, body.Replace("{{Employee}}", fullname));
+            Console.WriteLine($"SendWelcomeEmail thread after await - {Thread.CurrentThread.ManagedThreadId}");
+
+            //Console.WriteLine(Thread.CurrentThread.ManagedThreadId);
+
             return result;
         }
 
@@ -92,11 +110,14 @@ namespace N29_HT2
             var pathreplace = $"{firstname}_{lastname}";
             var path = fileNameToken.Replace("{{firstname}}_{lastname}}", pathreplace);
             await File.WriteAllTextAsync(path, text);
+            //Console.WriteLine(Thread.CurrentThread.ManagedThreadId);
+
         }
 
         private async Task<bool> SendOfficePoliceEmail(string recevemail, string subject, string body, string fullname)
         {
             var result = await emailService.SendAsync(recevemail, subject, body.Replace("{{Employee}}", fullname));
+            //Console.WriteLine(Thread.CurrentThread.ManagedThreadId);
             return result;
 
         }
